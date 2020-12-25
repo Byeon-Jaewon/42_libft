@@ -6,7 +6,7 @@
 /*   By: jbyeon <jbyeon@student.42seoul.kr>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/12/22 18:58:25 by jbyeon            #+#    #+#             */
-/*   Updated: 2020/12/25 16:23:02 by jbyeon           ###   ########.fr       */
+/*   Updated: 2020/12/26 00:26:08 by jbyeon           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,7 +20,7 @@ size_t		ft_strlcpy(char *dest, const char *src, size_t size)
 	if (dest == NULL && src == NULL)
 		return (0);
 	src_len = 0;
-	while (src[src_len] == '\0')
+	while (src[src_len] != '\0')
 		src_len++;
 	i = 0;
 	while (i < src_len && i + 1 < size)

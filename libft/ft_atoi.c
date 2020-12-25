@@ -5,8 +5,8 @@
 /*                                                    +:+ +:+         +:+     */
 /*   By: jbyeon <jbyeon@student.42seoul.kr>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2020/12/25 15:30:35 by jbyeon            #+#    #+#             */
-/*   Updated: 2020/12/25 16:21:55 by jbyeon           ###   ########.fr       */
+/*   Created: 2020/12/25 19:32:55 by jbyeon            #+#    #+#             */
+/*   Updated: 2020/12/25 19:37:24 by jbyeon           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,7 +22,7 @@ int		ft_atoi(const char *nptr)
 	while ((nptr[i] >= 9 && nptr[i] <= 13) || nptr[i] == ' ')
 		i++;
 	sign = 1;
-	while (nptr[i] == '+' || nptr[i] == '-')
+	if (nptr[i] == '+' || nptr[i] == '-')
 	{
 		if (nptr[i] == '-')
 			sign = sign * (-1);

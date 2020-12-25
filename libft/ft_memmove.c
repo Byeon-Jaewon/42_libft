@@ -6,7 +6,7 @@
 /*   By: jbyeon <jbyeon@student.42seoul.kr>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/12/24 18:38:57 by jbyeon            #+#    #+#             */
-/*   Updated: 2020/12/25 16:34:45 by jbyeon           ###   ########.fr       */
+/*   Updated: 2020/12/25 23:55:55 by jbyeon           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,7 +20,7 @@ void	*ft_memmove(void *dest, const void *src, size_t n)
 
 	dest_ptr = (unsigned char*)dest;
 	src_ptr = (unsigned char*)src;
-	i = 0;
+	i = 1;
 	if (src_ptr < dest_ptr)
 	{
 		while (i <= n)
