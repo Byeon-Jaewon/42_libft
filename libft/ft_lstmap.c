@@ -1,34 +1,39 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strmapi.c                                       :+:      :+:    :+:   */
+/*   ft_lstmap.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: jbyeon <jbyeon@student.42seoul.kr>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2020/12/31 14:45:33 by jbyeon            #+#    #+#             */
-/*   Updated: 2020/12/31 15:29:54 by jbyeon           ###   ########.fr       */
+/*   Created: 2021/01/03 16:30:37 by jbyeon            #+#    #+#             */
+/*   Updated: 2021/01/03 16:54:58 by jbyeon           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-char	*ft_strmapi(char const *s, char (*f)(unsigned int, char))
+t_list	*ft_lstmap(t_list *lst, void *(*f)(void *), void (*del)(void *))
 {
-	char	*ptr;
-	size_t	len;
-	size_t	i;
+	t_list	*tmp;
+	t_list	*tmp_n;
+	t_list	*cur;
 
-	if (s == 0 || f == 0)
+	if (lst == NULL || f == NULL || del == NULL)
 		return (NULL);
-	len = ft_strlen(s);
-	if (!(ptr = (char *)malloc(sizeof(char) * (len + 1))))
+	if ((tmp = ft_lstnew(f(lst->content))) == NULL)
 		return (NULL);
-	i = 0;
-	while (s[i])
+	cur = tmp;
+	lst = lst->next;
+	while (lst != NULL)
 	{
-		ptr[i] = f(i, s[i]);
-		i++;
+		if ((tmp_n = ft_lstnew(f(lst->content))) == NULL)
+		{
+			ft_lstclear(&tmp, del);
+			return (NULL);
+		}
+		cur->next = tmp_n;
+		cur = tmp_n;
+		lst = lst->next;
 	}
-	ptr[i] = '\0';
-	return (ptr);
+	return (tmp);
 }

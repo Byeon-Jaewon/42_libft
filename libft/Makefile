@@ -6,7 +6,7 @@
 #    By: jbyeon <jbyeon@student.42seoul.kr>         +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2020/12/25 16:11:45 by jbyeon            #+#    #+#              #
-#    Updated: 2020/12/31 15:06:16 by jbyeon           ###   ########.fr        #
+#    Updated: 2021/01/03 16:42:29 by jbyeon           ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -20,7 +20,9 @@ SRCS=ft_atoi.c ft_bzero.c ft_isalnum.c ft_isalpha.c \
 	 ft_strnstr.c ft_tolower.c ft_toupper.c ft_calloc.c \
 	 ft_substr.c ft_strjoin.c ft_strtrim.c ft_split.c \
 	 ft_itoa.c ft_strmapi.c ft_putchar_fd.c ft_putstr_fd.c\
-	 ft_putendl_fd.c ft_putnbr_fd.c
+	 ft_putendl_fd.c ft_putnbr_fd.c ft_lstnew.c ft_lstadd_front.c \
+	 ft_lstsize.c ft_lstlast.c ft_lstadd_back.c ft_lstdelone.c \
+	 ft_lstclear.c ft_lstiter.c ft_lstmap.c \
 
 OBJECTS=ft_atoi.o ft_bzero.o ft_isalnum.o ft_isalpha.o \
 		ft_isascii.o ft_isdigit.o ft_isprint.o ft_memccpy.o \
@@ -30,7 +32,9 @@ OBJECTS=ft_atoi.o ft_bzero.o ft_isalnum.o ft_isalpha.o \
 		ft_strnstr.o ft_tolower.o ft_toupper.o ft_calloc.o \
 		ft_substr.o ft_strjoin.o ft_strtrim.o ft_split.o \
 		ft_itoa.o ft_strmapi.o ft_putchar_fd.o ft_putstr_fd.o \
-		ft_putendl_fd.o ft_putnbr_fd.o \
+		ft_putendl_fd.o ft_putnbr_fd.o ft_lstnew.o ft_lstadd_front.o \
+		ft_lstsize.o ft_lstlast.o ft_lstadd_back.o ft_lstdelone.o \
+		ft_lstclear.o ft_lstiter.o ft_lstmap.o \
 
 CC = clang
 
