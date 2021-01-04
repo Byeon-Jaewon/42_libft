@@ -6,7 +6,7 @@
 /*   By: jbyeon <jbyeon@student.42seoul.kr>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/12/29 19:05:53 by jbyeon            #+#    #+#             */
-/*   Updated: 2020/12/29 23:42:40 by jbyeon           ###   ########.fr       */
+/*   Updated: 2021/01/04 23:59:21 by jbyeon           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -35,7 +35,7 @@ char	*ft_itoa(int n)
 	unsigned int	tmp;
 
 	len = intlen(n);
-	if (!(p = (char *)malloc(sizeof(char) * (len + 1))))
+	if (!(p = (char *)malloc(sizeof(char) * len + 1)))
 		return (NULL);
 	p[len--] = '\0';
 	tmp = n;
