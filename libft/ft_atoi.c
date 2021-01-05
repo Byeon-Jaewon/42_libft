@@ -6,7 +6,7 @@
 /*   By: jbyeon <jbyeon@student.42seoul.kr>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/12/25 19:32:55 by jbyeon            #+#    #+#             */
-/*   Updated: 2021/01/04 23:56:19 by jbyeon           ###   ########.fr       */
+/*   Updated: 2021/01/05 23:55:53 by jbyeon           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -34,5 +34,5 @@ int		ft_atoi(const char *nptr)
 		result = 10 * result + (nptr[i] - '0');
 		i++;
 	}
-	return (sign * result);
+	return (int)(sign * result);
 }
