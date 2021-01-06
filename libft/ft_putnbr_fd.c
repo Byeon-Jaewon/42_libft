@@ -6,7 +6,7 @@
 /*   By: jbyeon <jbyeon@student.42seoul.kr>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/12/31 15:03:54 by jbyeon            #+#    #+#             */
-/*   Updated: 2021/01/06 14:53:11 by jbyeon           ###   ########.fr       */
+/*   Updated: 2021/01/06 15:11:37 by jbyeon           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,11 +14,21 @@
 
 void	ft_putnbr_fd(int n, int fd)
 {
-	char	*s;
-
-	s = ft_itoa(n);
-	if (s == 0 || fd < 0)
+	if (fd < 0)
 		return ;
-	write(fd, s, ft_strlen(s));
-	free(s);
+	if (n == -2147483648)
+		ft_putstr_fd("-2147483648", fd);
+	else
+	{
+		if (n < 0)
+		{
+			ft_putchar_fd('-', fd);
+			n = n* (-1);
+		}
+		if (n > 9)
+		{
+			ft_putnbr_fd((n / 10), fd);
+		}
+		ft_putchar_fd((n % 10) + '0', fd);
+	}
 }
