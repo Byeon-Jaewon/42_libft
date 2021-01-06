@@ -6,7 +6,7 @@
 /*   By: jbyeon <jbyeon@student.42seoul.kr>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/12/31 15:03:54 by jbyeon            #+#    #+#             */
-/*   Updated: 2020/12/31 15:05:18 by jbyeon           ###   ########.fr       */
+/*   Updated: 2021/01/06 14:53:11 by jbyeon           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,4 +20,5 @@ void	ft_putnbr_fd(int n, int fd)
 	if (s == 0 || fd < 0)
 		return ;
 	write(fd, s, ft_strlen(s));
+	free(s);
 }

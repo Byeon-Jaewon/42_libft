@@ -6,7 +6,7 @@
 /*   By: jbyeon <jbyeon@student.42seoul.kr>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/12/29 19:05:53 by jbyeon            #+#    #+#             */
-/*   Updated: 2021/01/04 23:59:21 by jbyeon           ###   ########.fr       */
+/*   Updated: 2021/01/06 14:47:42 by jbyeon           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,10 +20,15 @@ int		intlen(int n)
 		len = 1;
 	else
 		len = 0;
-	while (n != 0)
+	if (n == 0)
+		len = 2;
+	else
 	{
-		n = n / 10;
-		len++;
+		while (n != 0)
+		{
+			n = n / 10;
+			len++;
+		}
 	}
 	return (len);
 }

@@ -6,7 +6,7 @@
 /*   By: jbyeon <jbyeon@student.42seoul.kr>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/01/03 16:30:37 by jbyeon            #+#    #+#             */
-/*   Updated: 2021/01/03 16:54:58 by jbyeon           ###   ########.fr       */
+/*   Updated: 2021/01/06 15:01:30 by jbyeon           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -32,7 +32,7 @@ t_list	*ft_lstmap(t_list *lst, void *(*f)(void *), void (*del)(void *))
 			return (NULL);
 		}
 		cur->next = tmp_n;
-		cur = tmp_n;
+		cur = cur->next;
 		lst = lst->next;
 	}
 	return (tmp);
