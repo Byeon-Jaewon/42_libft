@@ -1,1 +1,4 @@
-# 42
+# libft
+
+## CHAPTER 1 - INTRODUCTION
+
