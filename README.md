@@ -413,3 +413,308 @@
 </table>
 
 ## Chapter 4 - Bonus Part
+
+당신이 필수파트를 성공적으로 끝마쳤다면, 더 멀리 나아갈 수 있습니다. 보너스 포인트를 위해 이 마지막 섹션을 볼 수 있습니다.
+
+메모리와 문자열을 조작하는 함수는 매우 유용하지만, 당신은 리스트를 조작하는 함수가 더 유용하다는 것을 알아낼 것입니다.
+
+리스트의 요소들을 표현하기 위해 다음 구조를 사용해야 할것입니다. 이 구조는 반드시 당신의 `libft.h`에 추가해야합니다.
+
+`libft.a`라이브러리에 `make bonus`는 보너스 함수를 추가할 것입니다.
+
+이 파트의 헤더와 \*.c 파일에 `_bonus`를 추가할 필요가 없습니다. 당신의 보너스 함수를 포함하는 파일의 뒤에만 `_bonus`를 붙히세요.
+
+<pre>
+typedef struct    s_list
+{
+  void            *content;
+  struct s_list   *next;
+}                 t_list;
+</pre>
+
+`t_list` 구조체의 필드에 대한 설명입니다.
+- content : 요소에 포함되는 데이터. void 포인터는 어떤 종류의 자료형이든 저장할 수 있습니다.
+- next    : 다음 요소의 주소.  마지막 요소인 경우에는 NULL.
+
+아래의 함수들은 리스트를 쉽게 사용할 수 있게 해줄 것입니다.
+
+<table>
+  <tr>
+    <td>함수 이름</td>
+    <td>ft_lstnew</td>
+  </tr>
+  <tr>
+    <td>프로토타입</td>
+    <td>t_list *ftlstnew(void *content);</td>
+  </tr>
+  <tr>
+    <td>만들어질 파일</td>
+    <td>-</td>
+  </tr>
+  <tr>
+    <td>파라미터</td>
+    <td>#1. 새로운 요소를 만들 content</td>
+  </tr>
+  <tr>
+    <td>반환 값</td>
+    <td> 새로운 요소</td>
+  </tr>
+  <tr>
+    <td>외부 함수</td>
+    <td>malloc</td>
+  </tr>
+  <tr>
+    <td>설명</td>
+    <td>새로운 요소를 할당하고 반환. 변수 'content'는 매개변수 'content'의 값에 따라 초기화된다. 변수 'next'는 NULL로 초기화된다.</td>
+  </tr>
+</table>
+<table>
+  <tr>
+    <td>함수 이름</td>
+    <td>ft_lstadd_front</td>
+  </tr>
+  <tr>
+    <td>프로토타입</td>
+    <td>void ft_lstadd_front(t_list **lst, t_list *new);</td>
+  </tr>
+  <tr>
+    <td>만들어질 파일</td>
+    <td>-</td>
+  </tr>
+  <tr>
+    <td>파라미터</td>
+    <td>#1. 첫번째 연결리스트의 <br/>
+        #2. 리스트에 추가될 요소의 포인터 주소</td>
+  </tr>
+  <tr>
+    <td>반환 값</td>
+    <td>없음</td>
+  </tr>
+  <tr>
+    <td>외부 함수</td>
+    <td>없음</td>
+  </tr>
+  <tr>
+    <td>설명</td>
+    <td>리스트의 처음에 'new' 요소를 추가.</td>
+  </tr>
+</table>
+<table>
+  <tr>
+    <td>함수 이름</td>
+    <td>ft_lstsize</td>
+  </tr>
+  <tr>
+    <td>프로토타입</td>
+    <td>int ft_lstsize(t_list *lst);</td>
+  </tr>
+  <tr>
+    <td>만들어질 파일</td>
+    <td>-</td>
+  </tr>
+  <tr>
+    <td>파라미터</td>
+    <td>#1. 리스트의 첫 부분</td>
+  </tr>
+  <tr>
+    <td>반환 값</td>
+    <td>리스트의 길이</td>
+  </tr>
+  <tr>
+    <td>외부 함수</td>
+    <td>없음</td>
+  </tr>
+  <tr>
+    <td>설명</td>
+    <td>리스트 안 요소의 개수.</td>
+  </tr>
+</table>
+<table>
+  <tr>
+    <td>함수 이름</td>
+    <td>ft_lstlast</td>
+  </tr>
+  <tr>
+    <td>프로토타입</td>
+    <td>t_list *ft_lstlast(t_list *lst);</td>
+  </tr>
+  <tr>
+    <td>만들어질 파일</td>
+    <td>-</td>
+  </tr>
+  <tr>
+    <td>파라미터</td>
+    <td>#1. 리스트의 첫 부분</td>
+  </tr>
+  <tr>
+    <td>반환 값</td>
+    <td>리스트의 마지막 요소</td>
+  </tr>
+  <tr>
+    <td>외부 함수</td>
+    <td>없음</td>
+  </tr>
+  <tr>
+    <td>설명</td>
+    <td>리스트의 마지막 요소를 반환/</td>
+  </tr>
+</table>
+<table>
+  <tr>
+    <td>함수 이름</td>
+    <td>ft_lstadd_back</td>
+  </tr>
+  <tr>
+    <td>프로토타입</td>
+    <td>void ft_lstadd_back(t_list **lst, t_list *new);</td>
+  </tr>
+  <tr>
+    <td>만들어질 파일</td>
+    <td>-</td>
+  </tr>
+  <tr>
+    <td>파라미터</td>
+    <td>#1. 첫번째 연결리스트의 포인터 주소<br/>
+        #2. 리스트에 추가될 요소의 포인터 주소</td>
+  </tr>
+  <tr>
+    <td>반환 값</td>
+    <td>없음</td>
+  </tr>
+  <tr>
+    <td>외부 함수</td>
+    <td>없음</td>
+  </tr>
+  <tr>
+    <td>설명</td>
+    <td>리스트의 마지막 부분에 'new'요소 추가</td>
+  </tr>
+</table>
+<table>
+  <tr>
+    <td>함수 이름</td>
+    <td>ft_lstdelone</td>
+  </tr>
+  <tr>
+    <td>프로토타입</td>
+    <td>void ft_lstdelone(t_list *lst, void (*del)(void *));</td>
+  </tr>
+  <tr>
+    <td>만들어질 파일</td>
+    <td>-</td>
+  </tr>
+  <tr>
+    <td>파라미터</td>
+    <td>#1. free 할 요소<br/>
+        #2. content를 삭제하는데 사용되는 함수의 주소</td>
+  </tr>
+  <tr>
+    <td>반환 값</td>
+    <td>없음</td>
+  </tr>
+  <tr>
+    <td>외부 함수</td>
+    <td>free</td>
+  </tr>
+  <tr>
+    <td>설명</td>
+    <td>매개변수의 요소를 가져오고, 매개변수로 주어진 'del'함수를 이용하여 요소의 content의 메모리를 해제, 그리고 요소를 free. 'next'의 메모리는 free하지 말아야한다.</td>
+  </tr>
+</table>
+<table>
+  <tr>
+    <td>함수 이름</td>
+    <td>ft_lstclear</td>
+  </tr>
+  <tr>
+    <td>프로토타입</td>
+    <td>void ft_lstclear(t_list **lst, void (*del)(void *));</td>
+  </tr>
+  <tr>
+    <td>만들어질 파일</td>
+    <td>-</td>
+  </tr>
+  <tr>
+    <td>파라미터</td>
+    <td>#1. 요소의 포인터 주소<br/>
+        #2. 요소의 content를 삭제하는데 쓰이는 함수의 주소</td>
+  </tr>
+  <tr>
+    <td>반환 값</td>
+    <td>없음</td>
+  </tr>
+  <tr>
+    <td>외부 함수</td>
+    <td>free</td>
+  </tr>
+  <tr>
+    <td>설명</td>
+    <td>함수 'del'을 이용하여 주어진 요소와 후속되는 모든 요소를 삭제하고 해제. 모든 리스트의 포인터는 NULL로 세팅.</td>
+  </tr>
+</table>
+<table>
+  <tr>
+    <td>함수 이름</td>
+    <td>ft_lstiter</td>
+  </tr>
+  <tr>
+    <td>프로토타입</td>
+    <td>void ft_lstiter(t_list *lst, void (*f)(void *));</td>
+  </tr>
+  <tr>
+    <td>만들어질 파일</td>
+    <td>-</td>
+  </tr>
+  <tr>
+    <td>파라미터</td>
+    <td>#1. 요소의 포인터 주소<br/>
+        #2. 리스트에 반복적으로 사용될 함수의 주소</td>
+  </tr>
+  <tr>
+    <td>반환 값</td>
+    <td>없음</td>
+  </tr>
+  <tr>
+    <td>외부 함수</td>
+    <td>없음</td>
+  </tr>
+  <tr>
+    <td>설명</td>
+    <td>리스트 'lst'를 반복하고 함수 'f'를 각 요소의 content에 적용.</td>
+  </tr>
+</table>
+<table>
+  <tr>
+    <td>함수 이름</td>
+    <td>ft_lstmap</td>
+  </tr>
+  <tr>
+    <td>프로토타입</td>
+    <td>t_list ft_lstmap(t_list *lst, void *(*f)(void *), void (*del)(void *));</td>
+  </tr>
+  <tr>
+    <td>만들어질 파일</td>
+    <td>-</td>
+  </tr>
+  <tr>
+    <td>파라미터</td>
+    <td>#1. 요소의 포인터 주소<br/>
+        #2. 리스트에 반복적으로 사용되는 함수의 주소<br/>
+        #3. 필요한 경우 요소의 content를 삭제하기 위해 사용되는 함수의 주소</td>
+  </tr>
+  <tr>
+    <td>반환 값</td>
+    <td>새로운 리스트. 할당이 실패할 경우 NULL</td>
+  </tr>
+  <tr>
+    <td>외부 함수</td>
+    <td>malloc, free</td>
+  </tr>
+  <tr>
+    <td>설명</td>
+    <td>리스트 'lst'를 반복하여 각 요소의 content에 함수 'f'를 적용. 함수 'f'를 연속적으로 적용시켜 새로운 리스트를 생성. 필요한 경우 'del'함수는 요소의 content를 삭제하는데 사용됨.</td>
+  </tr>
+</table>
+
+
+적합하다고 생각한다면, 자신의 libft에 어떠한 함수들도 자유롭게 추가시킬 수 있습니다.
