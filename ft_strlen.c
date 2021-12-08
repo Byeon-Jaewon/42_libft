@@ -6,13 +6,13 @@
 /*   By: jbyeon <jbyeon@student.42seoul.kr>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/12/22 18:55:41 by jbyeon            #+#    #+#             */
-/*   Updated: 2020/12/25 16:00:56 by jbyeon           ###   ########.fr       */
+/*   Updated: 2021/12/08 16:21:52 by jbyeon           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-size_t		ft_strlen(const char *s)
+size_t	ft_strlen(const char *s)
 {
 	int		i;
 

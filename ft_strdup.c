@@ -6,7 +6,7 @@
 /*   By: jbyeon <jbyeon@student.42seoul.kr>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/12/25 15:49:39 by jbyeon            #+#    #+#             */
-/*   Updated: 2020/12/25 15:52:45 by jbyeon           ###   ########.fr       */
+/*   Updated: 2021/12/08 16:20:50 by jbyeon           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,7 +19,8 @@ char	*ft_strdup(char *src)
 	char	*tmp;
 
 	len = ft_strlen(src);
-	if (!(tmp = malloc(sizeof(char) * (len + 1))))
+	tmp = malloc(sizeof(char) * (len + 1));
+	if (!(tmp))
 		return (NULL);
 	i = 0;
 	while (src[i] != '\0')

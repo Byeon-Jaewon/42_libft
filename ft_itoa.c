@@ -6,13 +6,13 @@
 /*   By: jbyeon <jbyeon@student.42seoul.kr>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/12/29 19:05:53 by jbyeon            #+#    #+#             */
-/*   Updated: 2021/02/08 22:30:43 by jbyeon           ###   ########.fr       */
+/*   Updated: 2021/12/08 16:00:53 by jbyeon           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-int		intlen(int n)
+int	intlen(int n)
 {
 	int		len;
 
@@ -33,6 +33,12 @@ int		intlen(int n)
 	return (len);
 }
 
+char	*is_zero(char *p)
+{
+	p[0] = '0';
+	return (p);
+}
+
 char	*ft_itoa(int n)
 {
 	int				len;
@@ -40,15 +46,13 @@ char	*ft_itoa(int n)
 	unsigned int	tmp;
 
 	len = intlen(n);
-	if (!(p = (char *)malloc(sizeof(char) * len + 1)))
+	p = (char *)malloc(sizeof(char) * len + 1);
+	if (!(p))
 		return (NULL);
 	p[len--] = '\0';
 	tmp = n;
 	if (n == 0)
-	{
-		p[0] = '0';
-		return (p);
-	}
+		return (is_zero(p));
 	if (n < 0)
 	{
 		tmp = n * (-1);

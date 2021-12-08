@@ -6,13 +6,13 @@
 /*   By: jbyeon <jbyeon@student.42seoul.kr>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/12/31 15:39:31 by jbyeon            #+#    #+#             */
-/*   Updated: 2020/12/31 15:43:08 by jbyeon           ###   ########.fr       */
+/*   Updated: 2021/12/08 16:03:26 by jbyeon           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-int		ft_lstsize(t_list *lst)
+int	ft_lstsize(t_list *lst)
 {
 	int	i;
 

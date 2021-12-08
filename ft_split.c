@@ -6,7 +6,7 @@
 /*   By: jbyeon <jbyeon@student.42seoul.kr>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/12/28 21:44:49 by jbyeon            #+#    #+#             */
-/*   Updated: 2021/01/06 17:25:15 by jbyeon           ###   ########.fr       */
+/*   Updated: 2021/12/08 16:30:15 by jbyeon           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -37,7 +37,7 @@ size_t	count_word(char const *s, char c)
 	return (wc);
 }
 
-int		chk_next(char const *s, int c)
+int	chk_next(char const *s, int c)
 {
 	char	*ptr;
 	int		i;
@@ -69,21 +69,21 @@ char	**ft_split(char const *s, char c)
 	char	*p1;
 
 	wc = count_word(s, c);
-	if (!(p = (char **)malloc(sizeof(char *) * (wc + 1))))
+	p = (char **)malloc(sizeof(char *) * (wc + 1));
+	if (!(p))
 		return (NULL);
 	i = 0;
 	offset = 0;
-	p1 = (char *)s;
-	p1 = skip_c(p1, c);
+	p1 = skip_c((char *)s, c);
 	while (i < wc)
 	{
 		offset = (size_t)chk_next(p1, c);
-		if (!(p[i] = (char *)malloc(sizeof(char) * offset)))
+		p[i] = (char *)malloc(sizeof(char) * offset);
+		if (!(p[i]))
 			return (NULL);
-		ft_strlcpy(p[i], p1, offset);
+		ft_strlcpy(p[i++], p1, offset);
 		p1 = p1 + offset;
 		p1 = skip_c(p1, c);
-		i++;
 	}
 	p[i] = NULL;
 	return (p);

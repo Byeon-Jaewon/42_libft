@@ -6,7 +6,7 @@
 /*   By: jbyeon <jbyeon@student.42seoul.kr>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/12/23 12:09:54 by jbyeon            #+#    #+#             */
-/*   Updated: 2020/12/25 16:26:32 by jbyeon           ###   ########.fr       */
+/*   Updated: 2021/12/08 16:31:55 by jbyeon           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,7 +26,7 @@ char	*ft_strnstr(const char *big, const char *little, size_t len)
 		{
 			i = 1;
 			while (little[i] != '\0' && big[index + i] == little[i]
-					&& (index + i) < len)
+				&& (index + i) < len)
 			{
 				i++;
 			}

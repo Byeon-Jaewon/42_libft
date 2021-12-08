@@ -6,13 +6,13 @@
 /*   By: jbyeon <jbyeon@student.42seoul.kr>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/12/25 19:32:55 by jbyeon            #+#    #+#             */
-/*   Updated: 2021/01/05 23:55:53 by jbyeon           ###   ########.fr       */
+/*   Updated: 2021/12/08 15:53:16 by jbyeon           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-int		ft_atoi(const char *nptr)
+int	ft_atoi(const char *nptr)
 {
 	int		i;
 	int		sign;
@@ -34,5 +34,5 @@ int		ft_atoi(const char *nptr)
 		result = 10 * result + (nptr[i] - '0');
 		i++;
 	}
-	return (int)(sign * result);
+	return (sign * result);
 }
